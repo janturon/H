@@ -1,6 +1,8 @@
 # General reactivity framework proposal
 Having not yet any direct native way to implement reactivity (i.e. to code model-view data binding in a declarative way) we need a concept to implement it within current browser API. Such concept should NOT be code implementation (as there are many ways to do it), but rather verbal description, clearly defining the approach and intentions of the development.
 
+Part of this repo is a concept of implementation - [H framework](H.md). It is not meant as ready-to-use collective work, but rather as inspiration that rules mentioned below are achievable. The rules are clear and the concept is not complex. Keeping the complexity minimal is paramount, so make your own implementation adjusted to your needs to avoid needless generalization. This framework is verbal desription and nothing else. The code size is and allways will be 0 bytes.
+
 ## General requirements
 
 1. The binding must be expressed in pure HTML, otherwise it contradicts the declarative aspect.
