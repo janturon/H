@@ -36,10 +36,10 @@ Below is the code samples of the selected frameworks demonstrating their reactiv
 
 |Framework|sample app|H adaptation|
 |---|---|---|
-|Aurelia|[ToDo list](https://aurelia.io/docs/tutorials/creating-a-todo-app/)|[ToDo list](examples/todo.html)|
-|React|[TicTacToe](https://react.dev/learn/tutorial-tic-tac-toe)|[TicTacToe](examples/tictactoe.html)|
-|Svelte|[Doubled](https://svelte.dev/examples/reactive-declarations)|[Doubled](examples/doubled.html)|
-|Vue|[Increment](https://vuejs.org/guide/essentials/reactivity-fundamentals.html#script-setup)|[Increment](examples/increment.html)|
+|Aurelia|[ToDo list](https://aurelia.io/docs/tutorials/creating-a-todo-app/)|[ToDo list](https://janturon.github.io/Htodo.html)|
+|React|[TicTacToe](https://react.dev/learn/tutorial-tic-tac-toe)|[TicTacToe](https://janturon.github.io/Htictactoe.html)|
+|Svelte|[Doubled](https://svelte.dev/examples/reactive-declarations)|[Doubled](https://janturon.github.io/Hdoubled.html)|
+|Vue|[Increment](https://vuejs.org/guide/essentials/reactivity-fundamentals.html#script-setup)|[Increment](https://janturon.github.io/Hincrement.html)|
 
 ## Public interface
 
