@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<script src="H.js"></script>
+
+<script>
+Counter = H.dataModel({value: 0});
+</script>
+
+<button data-model="Counter" onclick="Counter.value++" data-bind-html>
+    ${this.value}
+</button>

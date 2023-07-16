@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<script src="H.js"></script>
+<script>
+AppData = H.dataModel({
+    heading: "ToDo",
+    todoDescription: "",
+    todos: []
+});
+
+AppLogic = {
+    addTodo: function(frm) {
+        event.preventDefault();
+        AppData.todos.push({
+            description: AppData.todoDescription,
+            done: false
+        });
+        AppData.todoDescription = "";
+    },
+
+    removeTodo: function(btn) {
+        let data = H.getDataModel(btn);
+        let index = AppData.todos.indexOf(data);
+        if(index != -1) AppData.todos.splice(index, 1);
+    }
+};
+</script>
+
+<body data-model="AppData">
+    <h1 data-bind-html>${this.heading}</h1>
+
+    <form onsubmit="AppLogic.addTodo(this); this.elements[0].focus()">
+        <input data-bind-value="this.todoDescription" autofocus>
+        <input type="submit" data-bind-disabled="!this.todoDescription">
+    </form>
+
+    <ul data-model=".todos" data-bind-array>
+        <li data-bind-html>
+            <label>
+                <input type="checkbox" data-bind-checked="this.done">
+                <span data-bind-style="this.done && 'text-decoration: line-through'">${this.description}</span>
+            </label>
+            <button onclick="AppLogic.removeTodo(this)">Remove</button>
+        </li>
+    </ul>
+</body>

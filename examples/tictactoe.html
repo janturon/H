@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<script src="H.js"></script>
+
+<style>
+    body { font-family: sans-serif; }
+    #board { width: 300px; height: 300px; margin: 0; padding: 0; list-style: none; }
+    #board > li { float: left; width: 100px; height: 100px; box-shadow: 1px 1px, inset 1px 1px; }
+    #board > li { display: flex; justify-content: center; align-items: center; font-size: 50px; }
+</style>
+
+<script>
+Board = H.dataModel(Array(9).fill(""));
+
+Game = {
+    _player: "X",
+    _winnings: [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8],
+        [0, 4, 8], [2, 4, 6]
+    ],
+    winner: _=> {
+        for(const w of Game._winnings) {
+            let bw = i => Board[w[i]];
+            if(bw(0) && bw(0)==bw(1) && bw(1)==bw(2)) return bw(0);
+        }
+    },
+    restart: _=> {
+        Board.forEach((v, i, b) => b[i] = "");
+        Game._player = "X";
+    },
+    move: elem => {
+        let index = +elem.dataset.model.slice(1,-1);
+        if(Board[index]) return;
+        Board[index] = Game._player;
+        Game._player = Game._player == "X" ? "O" : "X";
+        let winner = Game.winner();
+        if(winner) setTimeout(_=> alert("Winner: " + winner) && Game.restart());
+    }
+};
+</script>
+
+<ul id="board" data-model="Board" data-bind-array>
+    <li data-bind-html onclick="Game.move(this)">${this}
+</ul><br>
+<button onclick="Game.restart()">Restart</button>

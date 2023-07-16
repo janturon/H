@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<script src="H.js"></script>
+
+<script>
+Counter = H.dataModel({
+    value: 1,
+    get doubled() { return this.value * 2 },
+    get quadrupled() { return this.doubled * 2}
+});
+</script>
+
+<div data-model="Counter">
+    <p><button data-bind-html onclick="Counter.value++">Count: ${this.value}</button>
+    <p data-bind-html>${this.value} * 2 = ${this.doubled}
+    <p data-bind-html>${this.doubled} * 2 = ${this.quadrupled}
+</div>
