@@ -21,8 +21,10 @@ Below is the size of the H framework concept compared to some popular web framew
 |---|---|---|---|
 |H|6.66 kB|1.96 kB|0|
 |Aurelia|445 kB*|41 kB*|194 MB|
+|Knockout|317 kB|25 kB|0|
 |React|1.1 MB**|34.8 kB|185 MB|
 |Svelte|951 kB***|1.6 kB|25 MB|
+|Van|3.58 kB|0.8 kB|0|
 |Vue|641 kB****|33.9 kB|14.8 MB|
 
 - &shy;* node_modules/aurelia-framework/dist/commonjs/aurelia-framework.js + dependencies, fake size taken from bundlephobia reduced proportionally to the fraction of the size involving reactivity
@@ -37,9 +39,15 @@ Below is the code samples of the selected frameworks demonstrating their reactiv
 |Framework|sample app|H adaptation|
 |---|---|---|
 |Aurelia|[ToDo list](https://aurelia.io/docs/tutorials/creating-a-todo-app/)|[ToDo list](https://janturon.github.io/Htodo.html)|
+|Knockout|[Bert](https://learn.knockoutjs.com/#/?tutorial=intro)|[Bert](https://janturon.github.io/Hbert.html)|
 |React|[TicTacToe](https://react.dev/learn/tutorial-tic-tac-toe)|[TicTacToe](https://janturon.github.io/Htictactoe.html)|
 |Svelte|[Doubled](https://svelte.dev/examples/reactive-declarations)|[Doubled](https://janturon.github.io/Hdoubled.html)|
+|Van|[Calculator](https://vanjs.org/demo#calculator)|[Calculator](https://janturon.github.io/Hcalc.html)|
 |Vue|[Increment](https://vuejs.org/guide/essentials/reactivity-fundamentals.html#script-setup)|[Increment](https://janturon.github.io/Hincrement.html)|
+
+Van's approach to calculator is very conscise (and thus easy to understand), although it lacks some functionality (division by zero allowed and returns incorrect Infinity, multiple decimal dots allowed, 0.2 * 3 returns wrong result), it is by comparison far more comprehensible than [React's calculator](https://github.com/ahfarmer/calculator) where the fragmentation impedes to see the complete logic even in such simple application (one has to study the code fragment by fragment). This seems to be the motivation for the very existence of Van.js: in the H1 on their homepage they say "without React/JSX".
+
+The drawback of Van's syntax (same as in React) is that from `div(displayNum)` it is not clear if the `displayNum` is reactive or not and one must look-up if the definition is `state()` or not. This is not so in H, where everything in the context of `data-bind-X` attribute is reactive.
 
 ## Public interface
 

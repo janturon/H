@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<script src="H.js"></script>
+
+<script>
+Data = H.dataModel({
+    firstName: "Bert",
+    lastName: "Bertington",
+    get fullName() { return this.firstName + " " + this.lastName },
+    capitalizeLastName: function() { return this.lastName = this.lastName.toUpperCase() }
+});
+</script>
+
+<main data-model="Data">
+    <p>First name: <strong data-bind-html>${this.firstName}</strong>
+    <p>Last name: <strong data-bind-html>${this.lastName}</strong>
+
+    <p>First name: <input data-bind-value="this.firstName">
+    <p>Last name: <input data-bind-value="this.lastName">
+
+    <p>Full name: <strong data-bind-html>${this.fullName}</strong>
+
+    <button onclick="Data.capitalizeLastName()">Go caps</button>
+</main>

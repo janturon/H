@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<script src="H.js"></script>
+
+<style>
+    @font-face {
+        font-family: Unica One;
+        src: url('data:application/font-woff;base64,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');
+    }
+    #calc { width: 400px; font: 20pt monospace; border-radius: 5px; }
+    #calc { background: lightblue; border: 7px outset lightblue; }
+    #calc .display { position: relative; text-align: right; padding: 0 1rem; font: normal 36pt Unica One; }
+    #calc .display { background: hsl(180deg, 100%, 95%); border: 3px inset lightblue; border-right-width: 6px;}
+    #calc .display span { position: absolute; left: 1rem; font-size: 1rem; }
+    #calc .display span:nth-of-type(1) { top: .5rem; }
+    #calc .display span:nth-of-type(2) { top: 50%; font-size: inherit; transform: translate(-33%, -50%); }
+    #calc .display span:nth-of-type(3) { bottom: .5rem; }
+    #calc .display i { font-style: normal; font-size: 0.8em; }
+    #calc .display i { display: inline-block; margin: 0 -5px; vertical-align: -3px; }
+    #calc .buttons { display: flex; flex-wrap: wrap; border: 3px solid lightblue; border-left: 0; }
+    #calc .buttons b { width: 93px; margin: 3px; box-sizing: border-box; text-align: center; cursor: pointer;}
+    #calc .buttons b { user-select: none; --s: 90%; background: hsl(var(--c), var(--s), 80%); }
+    #calc .buttons b { border: 4px outset lightblue; border-radius: 8px; box-shadow: 0 0 0 1px; outline: 1px solid hsl(var(--c), var(--s), 40%); outline-offset: -4px; }
+    #calc .buttons b:focus { border-style: inset; --s: 70%; }
+    #calc .c { --c: 20deg; }
+    #calc .d { --c: 290deg; }
+    #calc .m { --c: 215deg; }
+    #calc .n { --c: 90deg; }
+    #calc .op { --c: 45deg; }
+    sup { line-height: 0; }
+</style>
+
+<script>
+Calc = H.dataModel({
+    typing: false, // false = new number, true = continue number
+    regValue: 0, // the first operand of binary operations
+    lastOp: null, // binary operator when typing the second operand
+    memoryValue: 0, // MS = memory save, MC = clear, MR = read
+    errorFlag: false, // in case of overflow or NaN (like sqrt of negative)
+    get negativeFlag() { return this.result < 0; },
+    result: "0", // number to show on the display
+    adaptResult: function() { // adapt result to calculator HW, raises errorFlag
+        let absVal = Math.abs(this.result);
+        if(isNaN(this.result)) {
+            this.result = 0;
+            this.errorFlag = true;
+        }
+        else if(absVal > 9999999999999) {
+            if(this.result == Infinity) this.result = "0";
+            let intPart = "" + parseInt(this.result);
+            let dotPos = intPart.length - 13;
+            if(dotPos > 0) {
+                this.result = "" + intPart.substring(0, 13) / Math.pow(10, dotPos);
+                if(!this.result.includes(".")) this.result+= "."+"0".repeat(13 - this.result.length);
+            }
+            this.errorFlag = true;
+        }
+        else if(absVal > 0 && absVal < 0.000000000001) {
+            this.result = "0";
+            // No error flag
+        }
+    },
+    get displayValue() { // adapt result to calculator display
+        let output = this.result;
+        output = (""+output).substring(0, 14);
+        if(!this.errorFlag) output = "" + parseFloat(Math.abs(output)); // remove trailing decimal zeroes
+        output = output.replace(".", "<i>.</i>");
+        return output;
+    },
+});
+
+CalcLogic = {
+    input: function(val) {
+        if(val == parseInt(val) || val == ".") this.numberInput(val);
+        else if("√÷x+-=".indexOf(val[0]) > -1) this.operationInput(val);
+        else if(val == "AC") this.clear();
+        else if(val == "C") Calc.result = "0";
+        else {
+            if(val == "MC") Calc.memoryValue = "0";
+            else if(val == "MS") Calc.memoryValue = Calc.result;
+            else if(val == "MR") Calc.result = Calc.memoryValue;
+            Calc.typing = false;
+        }
+    },
+    numberInput: function(val) {
+        if(Calc.typing && Calc.result.length>12) return;
+        if(val == "." && Calc.result.includes(".")) return;
+        if(val == "0" && Calc.result == "0") return;
+        if(Calc.typing) Calc.result+= val;
+        else Calc.result = val;
+        if(Calc.result == ".") Calc.result = "0.";
+        Calc.typing = true;
+        Calc.errorFlag = false;
+    },
+    operationInput: function(op) {
+        if(Calc.errorFlag) return;
+        if(op=="√") Calc.result = Math.sqrt(Calc.result);
+        else if(op=="+/-") Calc.result = -1 * Calc.result;
+        else {
+            if(Calc.lastOp == op) return;
+            Calc.lastOp && this.calculation(Calc.lastOp);
+            Calc.regValue = Calc.result;
+            Calc.lastOp = op=="=" ? null : op;
+        }
+        Calc.adaptResult();
+        Calc.typing = false;
+    },
+    clear: function() {
+        Calc.typing = false;
+        Calc.regValue = 0;
+        Calc.lastOp = null;
+        Calc.result = 0;
+        Calc.errorFlag = false;
+    },
+    calculation: function(op) {
+        let fn = {
+            "÷": (a,b) => a/b,
+            "x": (a,b) => a*b,
+            "+": (a,b) => a+b,
+            "-": (a,b) => a-b,
+            "xy":(a,b) => Math.pow(a,b),
+            "=": (a,b) => b
+        };
+        Calc.result = fn[op](+Calc.regValue, +Calc.result);
+    }
+};
+</script>
+
+<div id="calc" data-model="Calc">
+    <div class="display" data-bind-html>
+        ${this.displayValue}
+        <span data-bind-hidden="this.memoryValue==0">M</span>
+        <span data-bind-hidden="!this.negativeFlag">-</span>
+        <span data-bind-hidden="!this.errorFlag">E</span>
+    </div>
+    <div class="buttons">
+        <b class="c">AC</b><b class="c">C</b><b class="c">MC</b><b class="op">x<sup>y</sup></b>
+        <b class="n">7</b><b class="n">8</b><b class="n">9</b><b class="op">√</b>
+        <b class="n">4</b><b class="n">5</b><b class="n">6</b><b class="op">x</b>
+        <b class="n">1</b><b class="n">2</b><b class="n">3</b><b class="op">÷</b>
+        <b class="d">.</b><b class="n">0</b><b class="op">+</b><b class="op">-</b>
+        <b class="m">MR</b><b class="m">MS</b><b class="op">+/-</b><b class="d">=</b>
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll("#calc .buttons b").forEach(btn => {
+        btn.onmousedown = e => CalcLogic.input(btn.innerText);
+        btn.tabIndex = -1;
+        btn.onmouseup = e => btn.blur();
+    });
+</script>
